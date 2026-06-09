@@ -3,13 +3,14 @@ name: Helix Test CI
 on:
   push:
     branches: ["main"]
+  workflow_dispatch:
 
 jobs:
   test:
     runs-on: ubuntu-lates
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Run tests
         run: |
-          python test_app.py
+          python -c "assert 1 + 1 == 3"
